@@ -8,6 +8,7 @@ const app = new cdk.App();
 new ReliableDataStreamingPlatformsKafkaStack(app, 'tRC-ApacheKafka-Stack', {
     description: 'v1.0 - tecRacer - Amazon MSK Platform',
     env: {
+        account: app.node.tryGetContext('ACCOUNT_ID'),
         region: 'eu-central-1'
     },
     tags: {
