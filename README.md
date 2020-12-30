@@ -8,6 +8,7 @@ This is a project for to quickly get started with Amazon MSK and Amazon Kinesis 
   - [PreDeployment Steps](#predeployment-steps)
   - [Deploy Amazon MSK CloudFormation Stack](#deploy-amazon-msk-cloudformation-stack)
   - [Deploy Amazon Kinesis CloudFormation Stack](#deploy-amazon-kinesis-cloudformation-stack)
+  - [Destroy the Environment](#destroy-the-environment)
 
 ## PreDeployment Steps
 
@@ -29,10 +30,20 @@ npx cdk@1.80.0 deploy "tRC-ApacheKafka-Stack" -c ACCOUNT_ID=<input-your-aws-acco
 
 ## Deploy Amazon Kinesis CloudFormation Stack
 
-Quickly deploy Amazon Kinesis Data Stream with the AWS CDK CLI. This will create an encrypted Kinesis Data Stream with two shards configured.
+Quickly deploy Amazon Kinesis Data Stream with the AWS CDK CLI. This will create an encrypted Kinesis Data Stream with two shards configured and a retention period of 24 hours (smallest possible value).
 
 > Note: for convenience we use npx in this guide to provide you with the right version of AWS CDK to deploy this solution. When you have CDK installed globally with a different version this will always work and you wont get version conflicts.
 
 ```shell
 npx cdk@1.80.0 deploy "tRC-AmazonKinesis-Stack" -c ACCOUNT_ID=<input-your-aws-account-id>
 ```
+
+## Destroy the Environment
+
+You can quickly destroy the whole environment using the following command.
+
+```shell
+npx cdk@1.80.0 destroy "*" -c ACCOUNT_ID=<input-your-aws-account-id>
+```
+
+> Note: You could also selectively destroy the individual stacks when you replace the wildcard ("*") within the above command with the specific stack names from the deploy commands.

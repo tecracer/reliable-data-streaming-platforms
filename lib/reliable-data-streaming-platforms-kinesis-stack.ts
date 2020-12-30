@@ -18,7 +18,7 @@ export class ReliableDataStreamingPlatformsKinesisStack extends cdk.Stack {
     const amazonKinesisStream = new Stream(this, 'tRCAmazonKinesisStream', {
       encryption: StreamEncryption.KMS,
       encryptionKey: amazonKinesisEncryptionKey,
-      retentionPeriod: cdk.Duration.minutes(2),
+      retentionPeriod: cdk.Duration.hours(24),
       shardCount: 2
     });
 
