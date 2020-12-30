@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { ReliableDataStreamingPlatformsKafkaStack } from '../lib/reliable-data-streaming-platforms-stack';
+import { ReliableDataStreamingPlatformsKafkaStack } from '../lib/reliable-data-streaming-platforms-kafka-stack';
 
 const app = new cdk.App();
 
