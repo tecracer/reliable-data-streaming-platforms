@@ -29,3 +29,10 @@ npx cdk@1.80.0 deploy "tRC-ApacheKafka-Stack" -c ACCOUNT_ID=<input-your-aws-acco
 
 ## Deploy Amazon Kinesis CloudFormation Stack
 
+Quickly deploy Amazon Kinesis Data Stream with the AWS CDK CLI. This will create an encrypted Kinesis Data Stream with two shards configured.
+
+> Note: for convenience we use npx in this guide to provide you with the right version of AWS CDK to deploy this solution. When you have CDK installed globally with a different version this will always work and you wont get version conflicts.
+
+```shell
+npx cdk@1.80.0 deploy "tRC-AmazonKinesis-Stack" -c ACCOUNT_ID=<input-your-aws-account-id>
+```

@@ -27,5 +27,10 @@ export class ReliableDataStreamingPlatformsKinesisStack extends cdk.Stack {
       description: 'Amazon Kinesis Stream Arn (Use to obtain Cluster Information)'
     });
 
+    new cdk.CfnOutput(this, 'tRCAmazonKinesisStreamName', {
+      value: amazonKinesisStream.streamName,
+      description: 'Amazon Kinesis Stream Name (Use to Produce/Consume Messages to/from the Stream)'
+    });
+
   }
 }
